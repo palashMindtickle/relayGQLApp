@@ -1,0 +1,10 @@
+{
+    "relayGQLApp": {
+      "build_vars": {
+        "npm_token": "$NPM_TOKEN",
+        "gh_token":"$GH_TOKEN"
+      },
+      "build_cmd": "echo hello",
+      "dockerfile": "Dockerfile"
+    }
+  }

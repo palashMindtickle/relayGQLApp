@@ -1,0 +1,117 @@
+{
+  "name": "@mindtickle/relay_gql_app",
+  "version": "0.0.0",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:MindTickle/relayGQLApp.git"
+  },
+  "author": "Mindtickle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MindTickle/relayGQLApp/issues"
+  },
+  "homepage": "https://github.com/MindTickle/relayGQLApp#README",
+  "scripts": {
+    "build": "rm -rf lib/ && tsc",
+    "postversion": "git push",
+    "semantic-release": "semantic-release --no-ci",
+    "dev": "webpack-dev-server --config ./webpack/webpack.config.js --watch"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "typescript": "^3.9.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/plugin-proposal-do-expressions": "^7.2.0",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
+    "@babel/plugin-proposal-function-bind": "^7.2.0",
+    "@babel/plugin-proposal-function-sent": "^7.2.0",
+    "@babel/plugin-proposal-json-strings": "^7.2.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.2.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.4.4",
+    "@babel/plugin-proposal-numeric-separator": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.4.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.3.2",
+    "@babel/plugin-proposal-throw-expressions": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-syntax-import-meta": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.10.1",
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1",
+    "@mindtickle/frontend-configs": "git+ssh://git@github.com:MindTickle/frontend-configs.git#changes",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-relay": "7.0.8",
+    "@types/react-router-dom": "^4.3.5",
+    "@types/relay-compiler": "^8.0.0",
+    "@types/relay-config": "^6.0.1",
+    "@types/relay-runtime": "^10.0.1",
+    "babel-eslint": "10.0.3",
+    "babel-loader": "^8.0.6",
+    "circular-dependency-plugin": "^5.0.1",
+    "compression-webpack-plugin": "^1.1.11",
+    "copy-webpack-plugin": "^4.5.1",
+    "css-loader": "^0.28.11",
+    "dotenv": "^5.0.1",
+    "dotenv-webpack": "^2.0.0",
+    "duplicate-package-checker-webpack-plugin": "^3.0.0",
+    "eslint": "^7.4.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.7.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.11",
+    "getenv": "^0.7.0",
+    "html-webpack-plugin": "^3.1.0",
+    "husky": "^4.2.5",
+    "image-webpack-loader": "^4.2.0",
+    "inline-chunk-manifest-html-webpack-plugin": "^2.0.0",
+    "lint-staged": "^7.0.0",
+    "mini-css-extract-plugin": "^0.2.0",
+    "name-all-modules-plugin": "^1.0.1",
+    "node-sass": "^4.14.1",
+    "prettier": "^2.0.5",
+    "react-router-dom": "4.3.1",
+    "sass-loader": "^6.0.7",
+    "script-ext-html-webpack-plugin": "^2.0.1",
+    "semantic-release": "^17.1.1",
+    "style-loader": "^0.20.3",
+    "thread-loader": "^1.2.0",
+    "ts-loader": "^8.0.4",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.1.1"
+  },
+  "lint-staged": {
+    "./src/*.{ts}": [
+      "prettier --write",
+      "eslint src/*.ts --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
