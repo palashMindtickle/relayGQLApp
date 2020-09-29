@@ -52,14 +52,10 @@ const loadImages = hashing => {
 //   return { loader: "eslint-loader" };
 // };
 
-const transpileJS = () => {
-  return { loader: "babel-loader?cacheDirectory=true", options: {
+const transpileJSTS = () => ({ loader: "babel-loader?cacheDirectory=true", options: {
     plugins: ['relay'],
-    "presets": [
-      "react"
-    ]
-  } };
-};
+    "presets": ["@babel/preset-typescript", "@babel/preset-react"]
+  } })
 
 const transpileTS = () => ({
     loader: 'ts-loader',
@@ -129,22 +125,20 @@ const processImages = () => {
   return processing;
 };
 
-
-
 const processScripts = () => {
-  const jsProcessing = {
+  const processing = {
     test: Regex.scripts,
     include: [Dir.APP, Dir.MAIN_APP, Dir.MT_CORE, Dir.MINDTICKLE_COMMON, /mt-media-recorder\/src/,/mt-react/],
-    use: [transpileJS()],
+    use: transpileJSTS(),
   };
-  const tsProcessing = {
-    test: Regex.tsScripts,
-    include: [Dir.APP, Dir.MAIN_APP, Dir.MT_CORE, Dir.MINDTICKLE_COMMON, /mt-media-recorder\/src/,/mt-react/],
-    use: [transpileTS()],
-  };
+  // const tsProcessing = {
+  //   test: Regex.tsScripts,
+  //   include: [Dir.APP, Dir.MAIN_APP, Dir.MT_CORE, Dir.MINDTICKLE_COMMON, /mt-media-recorder\/src/,/mt-react/],
+  //   use: transpileTS(),
+  // };
   // processing.use.push(lintJS());
   // processing.use.push(transpileJS());
-  return [tsProcessing, jsProcessing];
+  return [processing];
 };
 
 const processStyles = () => {

@@ -1,7 +1,7 @@
 const Regex = {
     styles:/\.scss$/,
     libStyles:/\.css$/,
-    scripts: /\.js$/,
+    scripts: /\.(tsx|js|jsx|ts)$/,
     images: /\.(jpe?g|png|gif)$/i,
     fonts: /\.(woff|woff2|eot|ttf|svg)$/i,
     audio: /\.(mp3)$/i,

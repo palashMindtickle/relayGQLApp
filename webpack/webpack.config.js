@@ -70,7 +70,7 @@ if (Env.NODE_ENV === "development") {
 
 config.module = {
   strictExportPresence: true, // makes missing exports an error instead of warning
-  rules: [ ImagesLoaders,  ...ScriptsLoaders, StylesLoaders, LibStylesLoaders]
+  rules: [ ...ScriptsLoaders, ImagesLoaders  , StylesLoaders, LibStylesLoaders]
 };
 
 config.plugins = [...AddGlobalsPlugin, ...CreateTemplatePlugins, ...HandleErrorsPlugins, ...ProvidePlugin];
@@ -103,9 +103,9 @@ if(Env.QUERY_MINIFICATION) {
   config.plugins = config.plugins.concat(CopyPersistedQueriesPlugin);
 }
 
-// config.node = {
-//   fs: "empty"
-// }
+config.node = {
+  fs: "empty"
+}
 
 console.log(config)
 

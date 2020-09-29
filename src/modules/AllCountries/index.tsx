@@ -1,6 +1,9 @@
 import React from 'react';
+// import { graphql } from 'relay-runtime';
+// @ts-ignore
 import { graphql } from 'relay-runtime';
 
+// import { graphql } from 'babel-plugin-relay/macro'
 import { QueryRenderer } from '@mindtickle/relay-core';
 import Country from './components/Country';
 import {
