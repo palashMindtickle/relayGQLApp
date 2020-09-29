@@ -6,14 +6,18 @@ const history = createBrowserHistory();
 
 import Routing from "./Routing";
 
-class Root extends Component {
-	render() {
-		return (
-			<Router history={history}>
-				<Routing />
-			</Router>
-		);
-	}
-}
-
+// class Root extends Component {
+// 	render() {
+// 		return (
+// 			<Router history={history}>
+// 				<Routing />
+// 			</Router>
+// 		);
+// 	}
+// }
+const Root = () => (
+				<Router history={history}>
+					<Routing />
+				</Router>
+			);
 export default Root;

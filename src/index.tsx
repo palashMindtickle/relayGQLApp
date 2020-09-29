@@ -1,6 +1,12 @@
-import React from "react";
-import * as ReactDOM from "react-dom";
-import Root from "./components/root";
+import bootstrap, { initEnvironment } from '@mindtickle/relay-core';
 
-const MountOn = document.getElementById("root");
-ReactDOM.render(<Root />, MountOn);
+import Application from './components/root';
+import { getMiddlewares } from './utils/middlewares';
+
+bootstrap(
+  'root',
+  { Application },
+  initEnvironment.bind(undefined, {
+    network: { middlewares: getMiddlewares() },
+  })
+);

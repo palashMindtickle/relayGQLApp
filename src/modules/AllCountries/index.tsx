@@ -1,30 +1,22 @@
 import React from 'react';
 import { graphql } from 'relay-runtime';
 
-
-import { createFragmentContainer, QueryRenderer } from "react-relay"
-// import { Props } from 'relay-runtime';
-import environment from '../../api/relayEnv';
-// const graphql = require('babel-plugin-relay/macro');
-
-// import Header from './components/Header';
-// import { graphql } from "babel-plugin-relay/macro";
+import { QueryRenderer } from '@mindtickle/relay-core';
 import Country from './components/Country';
-// import {
-//   HomeCountriesListQuery,
-//   HomeCountriesListQueryResponse,
-// } from './__generated__/HomeCountriesListQuery.graphql';
-// ({ error, props }: Props)
-interface Props {
-  error: Error | null;
-  props: any;
-}
+import {
+  AllCountriesQuery,
+  AllCountriesQueryResponse,
+} from './__generated__/AllCountriesQuery.graphql';
+// interface Props {
+//   error: Error | null;
+//   props: any;
+// }
 
-const CountriesList = ({ props }: Props) => {
+const CountriesList = ({ props }:  { props?: AllCountriesQueryResponse }) => {
   if (props) {
     return (
       <ul>
-        {props.countries.map((country: Object, index: number) => (
+        {props.countries.map((country, index) => (
           <li key={index}>
             <Country country={country} />
           </li>
@@ -40,9 +32,9 @@ export default function AllCountries() {
   return (
     <div>
       {/* <Header /> */}
-      <QueryRenderer
+      <QueryRenderer<AllCountriesQuery>
         query={graphql`
-          query AllCountriesListQuery {
+          query AllCountriesQuery {
             countries {
               name,
               continent {
@@ -54,9 +46,8 @@ export default function AllCountries() {
             }
           }
         `}
-        render={CountriesList}
+        Component={CountriesList}
         variables={{}}
-        environment={environment}
       />
     </div>
   );

@@ -20,13 +20,14 @@
     "postversion": "git push",
     "semantic-release": "semantic-release --no-ci",
     "dev": "yarn run relay && webpack-dev-server --config ./webpack/webpack.config.js --watch",
-    "relay": "relay-compiler --language typescript --src './src' --schema 'src/api/schema.graphql' --extensions ts tsx"
+    "relay": "relay-compiler --language typescript --src './src' --schema 'src/api/schema.graphql' --extensions ts tsx --persist-output ./src/persisted-queries.json"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
     "react-relay": "^0.0.0-experimental-183bdd28",
     "relay-runtime": "^10.0.1",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "@mindtickle/relay-core": "^0.0.3-beta.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
