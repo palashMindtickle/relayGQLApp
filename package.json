@@ -19,10 +19,13 @@
     "build": "rm -rf lib/ && tsc",
     "postversion": "git push",
     "semantic-release": "semantic-release --no-ci",
-    "dev": "webpack-dev-server --config ./webpack/webpack.config.js --watch"
+    "dev": "yarn run relay && webpack-dev-server --config ./webpack/webpack.config.js --watch",
+    "relay": "relay-compiler --language typescript --src './src' --schema 'src/api/schema.graphql' --extensions ts tsx"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
+    "react-relay": "^0.0.0-experimental-183bdd28",
+    "relay-runtime": "^10.0.1",
     "typescript": "^3.9.7"
   },
   "devDependencies": {
@@ -63,6 +66,7 @@
     "@types/relay-runtime": "^10.0.1",
     "babel-eslint": "10.0.3",
     "babel-loader": "^8.0.6",
+    "babel-plugin-relay": "^10.0.1",
     "circular-dependency-plugin": "^5.0.1",
     "compression-webpack-plugin": "^1.1.11",
     "copy-webpack-plugin": "^4.5.1",
@@ -81,6 +85,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
     "getenv": "^0.7.0",
+    "graphql": "^15.3.0",
     "html-webpack-plugin": "^3.1.0",
     "husky": "^4.2.5",
     "image-webpack-loader": "^4.2.0",
@@ -91,6 +96,8 @@
     "node-sass": "^4.14.1",
     "prettier": "^2.0.5",
     "react-router-dom": "4.3.1",
+    "relay-compiler": "^10.0.1",
+    "relay-compiler-language-typescript": "^13.0.1",
     "sass-loader": "^6.0.7",
     "script-ext-html-webpack-plugin": "^2.0.1",
     "semantic-release": "^17.1.1",
@@ -114,4 +121,5 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
+
 }

@@ -113,4 +113,5 @@ module.exports = {
   CopyMockPlugin: copyMock(),
   CheckDuplicatePlugin: duplicate(),
   ProvidePlugin: globalDefinitions(),
+  RelayPlugin: ['relay']
 };

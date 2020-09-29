@@ -53,7 +53,12 @@ const loadImages = hashing => {
 // };
 
 const transpileJS = () => {
-  return { loader: "babel-loader?cacheDirectory=true" };
+  return { loader: "babel-loader?cacheDirectory=true", options: {
+    plugins: ['relay'],
+    "presets": [
+      "react"
+    ]
+  } };
 };
 
 const transpileTS = () => ({
@@ -139,7 +144,7 @@ const processScripts = () => {
   };
   // processing.use.push(lintJS());
   // processing.use.push(transpileJS());
-  return [jsProcessing, tsProcessing];
+  return [tsProcessing, jsProcessing];
 };
 
 const processStyles = () => {

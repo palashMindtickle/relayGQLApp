@@ -19,7 +19,8 @@ const {
   PerformancePlugins,
   CheckDuplicatePlugin,
   ProvidePlugin,
-  CopyPersistedQueriesPlugin
+  CopyPersistedQueriesPlugin,
+  RelayPlugin
 } = require("./plugins");
 console.log(Env);
 const config = {};
@@ -102,6 +103,9 @@ if(Env.QUERY_MINIFICATION) {
   config.plugins = config.plugins.concat(CopyPersistedQueriesPlugin);
 }
 
+// config.node = {
+//   fs: "empty"
+// }
 
 console.log(config)
 
