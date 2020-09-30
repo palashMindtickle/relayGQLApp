@@ -18,7 +18,6 @@ import Routing from "./Routing";
 // }
 const Root = () => (
 				<Router history={history}>
-					<Link to='/'>Home</Link>;
 					<Routing />
 				</Router>
 			);
