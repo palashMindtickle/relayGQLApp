@@ -1,19 +1,11 @@
 import React from 'react';
-// import { graphql } from 'relay-runtime';
-// @ts-ignore
 import { graphql } from 'relay-runtime';
-
-// import { graphql } from 'babel-plugin-relay/macro'
 import { QueryRenderer } from '@mindtickle/relay-core';
 import Country from './components/Country';
 import {
   AllCountriesQuery,
   AllCountriesQueryResponse,
 } from './__generated__/AllCountriesQuery.graphql';
-// interface Props {
-//   error: Error | null;
-//   props: any;
-// }
 
 const CountriesList = ({ props }:  { props?: AllCountriesQueryResponse }) => {
   if (props) {
@@ -34,7 +26,6 @@ const CountriesList = ({ props }:  { props?: AllCountriesQueryResponse }) => {
 export default function AllCountries() {
   return (
     <div>
-      {/* <Header /> */}
       <QueryRenderer<AllCountriesQuery>
         query={graphql`
           query AllCountriesQuery {

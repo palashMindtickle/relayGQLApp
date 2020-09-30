@@ -1,33 +1,25 @@
 import React from 'react';
-
 import { match as matchType } from 'react-router-dom';
 import { graphql } from 'relay-runtime';
-
-import { QueryRenderer } from "react-relay"
-import environment from '../../api/relayEnv';
-
+import { QueryRenderer } from '@mindtickle/relay-core';
 import Detail from './components/Detail';
 import {
   CountryDetailsQuery,
+  CountryDetailsQueryResponse
 } from './__generated__/CountryDetailsQuery.graphql';
 
-import Header from './components/Header';
-interface Props {
-  error: Error | null;
-  props: any;
-}
-function Wrapper({ props }: Props) {
+
+function Wrapper({ props }: { props?: CountryDetailsQueryResponse }) {
   if (!props) {
     return <div>Loading</div>;
   } else {
     return <Detail country={props.country} />;
   }
 }
-
-function CountryDetails({ match }: { match: matchType<{ id: string }> }) {
+function CountryDetails({ match }: { match: matchType<{code: string}> }) {
+  console.log(match.params, 'codepapa');
   return (
     <>
-      <Header />
       <QueryRenderer<CountryDetailsQuery>
         query={graphql`
           query CountryDetailsQuery($code: ID!) {
@@ -36,9 +28,8 @@ function CountryDetails({ match }: { match: matchType<{ id: string }> }) {
             }
           }
         `}
-        variables={{ code: match.params.id }}
-        render={Wrapper}
-        environment={environment}
+        variables={{ code: match.params.code }}
+        Component={Wrapper}
       />
     </>
   );
