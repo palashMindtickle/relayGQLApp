@@ -52,8 +52,9 @@ const loadImages = hashing => {
 //   return { loader: "eslint-loader" };
 // };
 
-const transpileTS = () => ({ loader: "babel-loader?cacheDirectory=true", options: {
-    "presets": [ "@babel/preset-typescript",   [
+const transpileJS = () => ({ loader: "babel-loader?cacheDirectory=true", options: {
+  plugins: ['relay'],
+    "presets": [   [
       "@babel/env",
       {
         modules: false,
@@ -73,11 +74,11 @@ const transpileTS = () => ({ loader: "babel-loader?cacheDirectory=true", options
       }
     ],
     "@babel/react"],
-    plugins: ['relay']
   } })
 
-const transpileJS = () => ({
-    loader: 'ts-loader',
+const transpileTS = () => ({
+    loader: 'ts-loader',options: {
+    }
   })
 
 const minimizeCSS = () => {
@@ -148,7 +149,7 @@ const processScripts = () => {
   const processing = {
     test: Regex.tsScripts,
     include: [Dir.APP
-      // , Dir.MAIN_APP, Dir.MT_CORE, Dir.MINDTICKLE_COMMON, /mt-media-recorder\/src/,/mt-react/
+      , Dir.MAIN_APP, Dir.MT_CORE, Dir.MINDTICKLE_COMMON, /mt-media-recorder\/src/,/mt-react/
     ],
     use: transpileTS(),
   };
@@ -156,7 +157,7 @@ const processScripts = () => {
   const processing2 = {
     test: Regex.scripts,
     include: [Dir.APP
-      // , Dir.MAIN_APP, Dir.MT_CORE, Dir.MINDTICKLE_COMMON, /mt-media-recorder\/src/,/mt-react/
+      , Dir.MAIN_APP, Dir.MT_CORE, Dir.MINDTICKLE_COMMON, /mt-media-recorder\/src/,/mt-react/
     ],
     use: transpileJS(),
   };
