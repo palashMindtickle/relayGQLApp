@@ -19,7 +19,7 @@
     "build": "rm -rf lib/ && tsc",
     "postversion": "git push",
     "semantic-release": "semantic-release --no-ci",
-    "dev": "yarn run relay && webpack-dev-server --config ./webpack/webpack.config.js --watch",
+    "dev": "yarn run relay && NODE_ENV=development webpack-dev-server --config ./webpack/webpack.config.js --watch",
     "relay": "relay-compiler --language typescript --src './src' --schema 'src/api/schema.graphql' --extensions ts tsx --persist-output ./src/persisted-queries.json"
   },
   "dependencies": {
@@ -54,12 +54,15 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-syntax-import-meta": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/plugin-transform-template-literals": "^7.10.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.10.1",
+    "@babel/runtime-corejs2": "^7.11.2",
     "@commitlint/cli": "^9.0.1",
     "@commitlint/config-conventional": "^9.0.1",
     "@mindtickle/frontend-configs": "git+ssh://git@github.com:MindTickle/frontend-configs.git#changes",
+    "@mindtickle/mt-ui-components": "git+ssh://git@github.com/MindTickle/mt-ui-components.git#track/prod",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
     "@types/react": "^16.9.43",
@@ -75,6 +78,7 @@
     "circular-dependency-plugin": "^5.0.1",
     "compression-webpack-plugin": "^1.1.11",
     "copy-webpack-plugin": "^4.5.1",
+    "core-js": "2.6.11",
     "css-loader": "^0.28.11",
     "dotenv": "^5.0.1",
     "dotenv-webpack": "^2.0.0",
@@ -109,14 +113,12 @@
     "style-loader": "^0.20.3",
     "thread-loader": "^1.2.0",
     "ts-loader": "^8.0.4",
-    "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.6",
+    "webpack": "v5.0.0-rc.3",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.1.1"
   },
   "lint-staged": {
     "./src/*.{ts}": [
-      "prettier --write",
-      "eslint src/*.ts --fix",
       "git add"
     ]
   },

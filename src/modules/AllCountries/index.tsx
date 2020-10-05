@@ -7,7 +7,7 @@ import {
   AllCountriesQueryResponse,
 } from './__generated__/AllCountriesQuery.graphql';
 
-const CountriesList = ({ props }:  { props?: AllCountriesQueryResponse }) => {
+const CountriesList = ({ props }: { props?: AllCountriesQueryResponse }) => {
   if (props) {
     return (
       <ul>
@@ -24,13 +24,14 @@ const CountriesList = ({ props }:  { props?: AllCountriesQueryResponse }) => {
 }
 
 export default function AllCountries() {
+  console.log(graphql, 'graphql fun palash')
   return (
     <div>
       <QueryRenderer<AllCountriesQuery>
         query={graphql`
           query AllCountriesQuery {
             countries {
-              name,
+              name
               continent {
                 name
               }

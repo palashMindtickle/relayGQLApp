@@ -5,9 +5,8 @@ import { QueryRenderer } from '@mindtickle/relay-core';
 import Detail from './components/Detail';
 import {
   CountryDetailsQuery,
-  CountryDetailsQueryResponse
+  CountryDetailsQueryResponse,
 } from './__generated__/CountryDetailsQuery.graphql';
-
 
 function Wrapper({ props }: { props?: CountryDetailsQueryResponse }) {
   if (!props) {
@@ -16,8 +15,7 @@ function Wrapper({ props }: { props?: CountryDetailsQueryResponse }) {
     return <Detail country={props.country} />;
   }
 }
-function CountryDetails({ match }: { match: matchType<{code: string}> }) {
-  console.log(match.params, 'codepapa');
+function CountryDetails({ match }: { match: matchType<{ code: string }> }) {
   return (
     <>
       <QueryRenderer<CountryDetailsQuery>

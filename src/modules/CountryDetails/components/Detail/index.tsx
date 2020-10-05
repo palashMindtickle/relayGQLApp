@@ -26,8 +26,8 @@ function Detail({ country }: { country: Detail_country | null }) {
 export default createFragmentContainer(Detail, {
   country: graphql`
     fragment Detail_country on Country {
-      name,
-      currency,
+      name
+      currency
       code
     }
   `,

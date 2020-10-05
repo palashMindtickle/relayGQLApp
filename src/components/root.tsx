@@ -1,24 +1,23 @@
-import React, { Component } from "react";
-import { Router } from "react-router-dom";
-import { createBrowserHistory } from "history";
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Router } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import Routing from './Routing';
 
 const history = createBrowserHistory();
 
-import Routing from "./Routing";
 
 // class Root extends Component {
-// 	render() {
-// 		return (
-// 			<Router history={history}>
-// 				<Routing />
-// 			</Router>
-// 		);
-// 	}
+//   render() {
+//     return (
+//       <Router history={history}>
+//         <Routing />
+//       </Router>
+//     );
+//   }
 // }
 const Root = () => (
-				<Router history={history}>
-					<Routing />
-				</Router>
-			);
+  <Router history={history}>
+    <Routing />
+  </Router>
+      );
 export default Root;
