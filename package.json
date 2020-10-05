@@ -20,18 +20,26 @@
     "postversion": "git push",
     "semantic-release": "semantic-release --no-ci",
     "dev": "yarn run relay && NODE_ENV=development webpack-dev-server --config ./webpack/webpack.config.js --watch",
-    "relay": "relay-compiler --language typescript --src './src' --schema 'src/api/schema.graphql' --extensions ts tsx --persist-output ./src/persisted-queries.json"
+    "relay": "relay-compiler --language typescript --src './src' --schema 'src/api/schema.graphql' --extensions ts tsx"
   },
   "dependencies": {
+    "@mindtickle/frontend-configs": "git+ssh://git@github.com/MindTickle/frontend-configs#changes",
+    "@mindtickle/mt-ui-components": "git+ssh://git@github.com/MindTickle/mt-ui-components.git#track/prod",
     "@mindtickle/relay-core": "^0.0.3-beta.6",
-    "babel-plugin-macros": "^2.8.0",
-    "dotenv": "^8.2.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "classnames": "^2.2.5",
+    "global": "^4.4.0",
+    "graphql": "^15.3.0",
+    "hotel": "0.8.6",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "react-relay": "9.1.0",
-    "react-relay-network-modern": "^5.0.0",
-    "relay-runtime": "^10.0.1",
-    "typescript": "^3.9.7"
+    "react-relay-network-modern": "^4.7.3",
+    "react-router-dom": "^4.3.1",
+    "relay-config": "^10.0.0",
+    "relay-runtime": "^10.0.0",
+    "styled-components": "^3.5.0-0",
+    "typescript": "^3.9.7",
+    "relay-compiler": "^10.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -61,8 +69,6 @@
     "@babel/runtime-corejs2": "^7.11.2",
     "@commitlint/cli": "^9.0.1",
     "@commitlint/config-conventional": "^9.0.1",
-    "@mindtickle/frontend-configs": "git+ssh://git@github.com:MindTickle/frontend-configs.git#changes",
-    "@mindtickle/mt-ui-components": "git+ssh://git@github.com/MindTickle/mt-ui-components.git#track/prod",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
     "@types/react": "^16.9.43",
@@ -102,20 +108,17 @@
     "lint-staged": "^7.0.0",
     "mini-css-extract-plugin": "^0.2.0",
     "name-all-modules-plugin": "^1.0.1",
-    "node-sass": "^4.14.1",
+    "node-sass": "^4.7.2",
     "prettier": "^2.0.5",
     "react-router-dom": "4.3.1",
-    "relay-compiler": "^10.0.1",
-    "relay-compiler-language-typescript": "^13.0.1",
+    "relay-compiler-language-typescript": "^12.0.3",
     "sass-loader": "^6.0.7",
     "script-ext-html-webpack-plugin": "^2.0.1",
     "semantic-release": "^17.1.1",
     "style-loader": "^0.20.3",
     "thread-loader": "^1.2.0",
     "ts-loader": "^8.0.4",
-    "webpack": "v5.0.0-rc.3",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.1.1"
+    "webpack": "^5.0.0-beta.22"
   },
   "lint-staged": {
     "./src/*.{ts}": [
