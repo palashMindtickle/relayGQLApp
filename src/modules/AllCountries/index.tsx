@@ -10,13 +10,18 @@ import {
 const CountriesList = ({ props }:  { props?: AllCountriesQueryResponse }) => {
   if (props) {
     return (
-      <ul>
+      <table style={{width:"100%"}}>
+        <tr>
+          <th>Country</th>
+          <th>Languages</th>
+          <th>Continent</th>
+        </tr>
         {props.countries.map((country, index) => (
-          <li key={index}>
+          <tr>
             <Country country={country} />
-          </li>
+          </tr>
         ))}
-      </ul>
+      </table>
     );
   } else {
     return <div>Loading.....</div>;
@@ -30,7 +35,8 @@ export default function AllCountries() {
         query={graphql`
           query AllCountriesQuery {
             countries {
-              name,
+              name
+              code
               continent {
                 name
               }
