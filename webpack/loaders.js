@@ -54,7 +54,7 @@ const loadImages = hashing => {
 
 const transpileJS = () => ({ loader: "babel-loader?cacheDirectory=true", options: {
   plugins: ['relay'],
-    "presets": [   [
+    "presets": [ "@babel/preset-typescript",  [
       "@babel/env",
       {
         modules: false,
@@ -168,7 +168,7 @@ const processScripts = () => {
   // };
   // processing.use.push(lintJS());
   // processing.use.push(transpileJS());
-  return [processing, processing2];
+  return [ processing2];
 };
 
 const processStyles = () => {

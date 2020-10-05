@@ -22,7 +22,7 @@ const {
   CopyPersistedQueriesPlugin,
   RelayPlugin
 } = require("./plugins");
-console.log(Env);
+// console.log(Env);
 const config = {};
 config.mode = Env.NODE_ENV;
 process.env.BABEL_ENV = Env.NODE_ENV === "development" ? "dev" : Env.NODE_ENV;
@@ -103,9 +103,9 @@ if(Env.QUERY_MINIFICATION) {
   config.plugins = config.plugins.concat(CopyPersistedQueriesPlugin);
 }
 
-config.node = {
-  fs: "empty"
-}
+// config.node = {
+//   fs: "empty"
+// }
 
 console.log(config)
 

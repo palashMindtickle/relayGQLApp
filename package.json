@@ -20,7 +20,7 @@
     "postversion": "git push",
     "semantic-release": "semantic-release --no-ci",
     "dev": "yarn run relay && webpack-dev-server --config ./webpack/webpack.config.js --watch",
-    "relay": "relay-compiler --language typescript --src './src' --schema 'src/api/schema.graphql' --extensions ts tsx --persist-output ./src/persisted-queries.json"
+    "relay": "relay-compiler --language typescript --src './src' --schema 'src/api/schema.graphql' --extensions ts tsx"
   },
   "dependencies": {
     "@mindtickle/relay-core": "^0.0.3-beta.6",
