@@ -1,2 +1,3 @@
 import React from 'react';
-export default () => <>"palas"</>
+import {Link} from 'react-router-dom';
+export default () => <Link to="/countries">View All Countries</Link>
