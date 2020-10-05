@@ -146,29 +146,15 @@ const processImages = () => {
 };
 
 const processScripts = () => {
-  const processing = {
-    test: Regex.tsScripts,
-    include: [Dir.APP
-      , Dir.MAIN_APP, Dir.MT_CORE, Dir.MINDTICKLE_COMMON, /mt-media-recorder\/src/,/mt-react/
-    ],
-    use: transpileTS(),
-  };
 
-  const processing2 = {
+  const processing = {
     test: Regex.scripts,
     include: [Dir.APP
       , Dir.MAIN_APP, Dir.MT_CORE, Dir.MINDTICKLE_COMMON, /mt-media-recorder\/src/,/mt-react/
     ],
     use: transpileJS(),
   };
-  // const tsProcessing = {
-  //   test: Regex.tsScripts,
-  //   include: [Dir.APP, Dir.MAIN_APP, Dir.MT_CORE, Dir.MINDTICKLE_COMMON, /mt-media-recorder\/src/,/mt-react/],
-  //   use: transpileTS(),
-  // };
-  // processing.use.push(lintJS());
-  // processing.use.push(transpileJS());
-  return [ processing2];
+  return [ processing];
 };
 
 const processStyles = () => {
