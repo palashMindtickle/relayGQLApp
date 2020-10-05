@@ -57,10 +57,11 @@ const transpileJS = () => ({ loader: "babel-loader?cacheDirectory=true", options
     "presets": [ "@babel/preset-typescript",  [
       "@babel/env",
       {
-        modules: false,
-        debug: false,
-        corejs: 2,
-        useBuiltIns: "usage",
+        // modules: false,
+        // debug: false,
+        // corejs: 3,
+        // useBuiltIns: "usage",
+        loose: true,
         targets: {
           browsers: [
             "last 2 versions",
