@@ -14,5 +14,5 @@ const c =  webpackConfig({
   },
 });
 // console.log(c.resolve, '---------------')
-console.log(c.plugins, '---------------')
+// console.log(c.plugins, '---------------')
 module.exports = c ;

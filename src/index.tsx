@@ -1,10 +1,10 @@
-import bootstrap, { initEnvironment } from '@mindtickle/relay-core';
+import bootstrap, { initEnvironment } from "@mindtickle/relay-core";
 
-import Application from './components/root';
-import { getMiddlewares } from './utils/middlewares';
+import Application from "./components/root";
+import { getMiddlewares } from "./utils/middlewares";
 
 bootstrap(
-  'root',
+  "root",
   { Application },
   initEnvironment.bind(undefined, {
     network: { middlewares: getMiddlewares() },

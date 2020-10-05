@@ -1,11 +1,11 @@
-import React from 'react';
-import { graphql } from 'relay-runtime';
-import { QueryRenderer } from '@mindtickle/relay-core';
-import Country from './components/Country';
+import React from "react";
+import { graphql } from "relay-runtime";
+import { QueryRenderer } from "@mindtickle/relay-core";
+import Country from "./components/Country";
 import {
   AllCountriesQuery,
   AllCountriesQueryResponse,
-} from './__generated__/AllCountriesQuery.graphql';
+} from "./__generated__/AllCountriesQuery.graphql";
 
 const CountriesList = ({ props }: { props?: AllCountriesQueryResponse }) => {
   if (props) {
@@ -21,10 +21,9 @@ const CountriesList = ({ props }: { props?: AllCountriesQueryResponse }) => {
   } else {
     return <div>Loading.....</div>;
   }
-}
+};
 
 export default function AllCountries() {
-  console.log(graphql, 'graphql fun palash')
   return (
     <div>
       <QueryRenderer<AllCountriesQuery>
@@ -37,7 +36,7 @@ export default function AllCountries() {
               }
               languages {
                 name
-						  }
+              }
             }
           }
         `}
