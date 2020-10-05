@@ -1,13 +1,13 @@
 /* tslint:disable */
 /* eslint-disable */
 // @ts-nocheck
-/* @relayHash 8da6cf5c65602cd321dfbcdd805d92fe */
 
 import { ConcreteRequest } from "relay-runtime";
 export type AllCountriesQueryVariables = {};
 export type AllCountriesQueryResponse = {
     readonly countries: ReadonlyArray<{
         readonly name: string;
+        readonly code: string;
         readonly continent: {
             readonly name: string;
         };

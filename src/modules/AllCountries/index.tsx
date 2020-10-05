@@ -6,15 +6,15 @@ import {
   AllCountriesQuery,
   AllCountriesQueryResponse,
 } from './__generated__/AllCountriesQuery.graphql';
-
+import './style.css'
 const CountriesList = ({ props }:  { props?: AllCountriesQueryResponse }) => {
   if (props) {
     return (
       <table style={{width:"100%"}}>
         <tr>
-          <th>Country</th>
-          <th>Languages</th>
-          <th>Continent</th>
+          <th className='alignC'>Country</th>
+          <th className='alignC'>Languages</th>
+          <th className='alignC'>Continent</th>
         </tr>
         {props.countries.map((country, index) => (
           <tr>
