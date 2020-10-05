@@ -17,7 +17,7 @@ function Detail({ country }: { country: Detail_country | null }) {
         <b>Currency</b>: {country.currency}
       </div>
       <div>
-        <b>Code</b>: {country.code}
+        <b>Phone Code</b>: {`+${country.phone}`}
       </div>
     </div>
   );
@@ -28,7 +28,7 @@ export default createFragmentContainer(Detail, {
     fragment Detail_country on Country {
       name,
       currency,
-      code
+      phone
     }
   `,
 });
