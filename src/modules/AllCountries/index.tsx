@@ -6,8 +6,9 @@ import {
   AllCountriesQuery,
   AllCountriesQueryResponse,
 } from './__generated__/AllCountriesQuery.graphql';
-import './style.css'
-const CountriesList = ({ props }:  { props?: AllCountriesQueryResponse }) => {
+import './style.css';
+// import Loader from 'mt-ui'
+const CountriesList = ({ props }: { props?: AllCountriesQueryResponse }) => {
   if (props) {
     return (
       <table style={{width:"100%"}}>

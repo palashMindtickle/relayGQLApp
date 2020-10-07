@@ -27,6 +27,7 @@ export type AllCountriesQuery = {
 query AllCountriesQuery {
   countries {
     name
+    code
     continent {
       name
     }
@@ -58,6 +59,13 @@ v2 = [
     "plural": true,
     "selections": [
       (v0/*: any*/),
+      {
+        "alias": null,
+        "args": null,
+        "kind": "ScalarField",
+        "name": "code",
+        "storageKey": null
+      },
       {
         "alias": null,
         "args": null,
@@ -100,13 +108,14 @@ return {
     "selections": (v2/*: any*/)
   },
   "params": {
-    "id": "8da6cf5c65602cd321dfbcdd805d92fe",
+    "cacheID": "8ac808fd186cfb93303ae463a19754f4",
+    "id": null,
     "metadata": {},
     "name": "AllCountriesQuery",
     "operationKind": "query",
-    "text": null
+    "text": "query AllCountriesQuery {\n  countries {\n    name\n    code\n    continent {\n      name\n    }\n    languages {\n      name\n    }\n  }\n}\n"
   }
 };
 })();
-(node as any).hash = '4aaa7375fd8f33d402176fa254e21d8d';
+(node as any).hash = '03e44d765dc0c3e782407ad1c27ee15b';
 export default node;
