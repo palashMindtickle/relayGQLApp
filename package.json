@@ -23,6 +23,7 @@
     "relay": "relay-compiler --language typescript --src './src' --schema 'src/api/schema.graphql' --extensions ts tsx --watch"
   },
   "dependencies": {
+    "@mindtickle/mt-ui-components": "git+ssh://git@github.com/MindTickle/mt-ui-components.git#track/prod",
     "@mindtickle/relay-core": "^0.0.3-beta.6",
     "babel-plugin-macros": "^2.8.0",
     "core-js": "^2.5.7",
