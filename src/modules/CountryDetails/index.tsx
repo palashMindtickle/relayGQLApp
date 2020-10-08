@@ -7,11 +7,15 @@ import {
   CountryDetailsQuery,
   CountryDetailsQueryResponse
 } from './__generated__/CountryDetailsQuery.graphql';
-
+import Loader, { LOADING_SIZE, LOADER_TYPE } from 'mt-ui-components/Loader'
 
 function Wrapper({ props }: { props?: CountryDetailsQueryResponse }) {
   if (!props) {
-    return <div>Loading</div>;
+    return <Loader
+      loadingMessage={'Fetching country Details...'}
+      type={LOADER_TYPE.Full}
+      size={LOADING_SIZE.sizeBig}
+  />;
   } else {
     return <Detail country={props.country} />;
   }

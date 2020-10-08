@@ -32,8 +32,8 @@
     "react-relay": "9.1.0",
     "react-relay-network-modern": "^5.0.0",
     "relay-runtime": "^10.0.1",
-    "typescript": "^3.9.7",
-    "@mindtickle/mt-ui-components": "git+ssh://git@github.com/MindTickle/mt-ui-components.git#track/prod"
+    "styled-components": "^5.2.0",
+    "typescript": "^3.9.7"
   },
   "devDependencies": {
     "@commitlint/cli": "^9.0.1",
